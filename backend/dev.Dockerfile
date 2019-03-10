@@ -1,11 +1,13 @@
 FROM node:alpine
 
-WORKDIR /src
+WORKDIR /app
 RUN npm install -g nodemon
 
 ADD package.json package-lock.json ./
 RUN npm install
 
-ADD . /src
+ADD bin ./bin
 
-CMD ["nodemon", "src"]
+VOLUME [ "/app/src" ]
+
+CMD ["nodemon"]

@@ -10,7 +10,7 @@ services:
     expose:
       - 3000
     volumes:
-      - ./backend:/src
+      - ./backend/src:/app/src
 
   frontend:
     build:
